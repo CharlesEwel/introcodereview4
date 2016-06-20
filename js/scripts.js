@@ -1,12 +1,12 @@
 //Business Logic
 
-function pizza(name, size, toppings) {
+function Pizza(name, size, toppings) {
   this.customerName = name;
   this.pizzaSize = size;
   this.toppings = toppings;
 }
 
-pizza.prototype.price = function () {
+Pizza.prototype.price = function () {
   cost=8;
   if (this.pizzaSize==="small") {
     cost-=2;
@@ -21,13 +21,11 @@ pizza.prototype.price = function () {
 //UI Logic
 
 $(document).ready(function() {
-  // event.preventDefault()
-  $("form#pizza-order").submit(function() {
+  $("#pizza-order").submit(function(event) {
+    event.preventDefault()
     var customerName = $("input#name").val();
-    debugger;
     var size = $("input:radio[name=size]:checked").val();
-    debugger;
-    var pizza = new Pizza(customerName, "large", "toppings")
+    var pizza = new Pizza(customerName, size, "toppings")
     orderPrice=pizza.price();
     $("#order-output").text("Your total cost comes out to " + orderPrice);
   });
