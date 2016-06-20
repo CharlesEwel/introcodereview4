@@ -6,17 +6,29 @@ function pizza(name, size, toppings) {
   this.toppings = toppings;
 }
 
+pizza.prototype.price = function () {
+  cost=8;
+  if (this.pizzaSize==="small") {
+    cost-=2;
+  } else if (this.pizzaSize==="large") {
+    cost+=2;
+  } else if (this.pizzaSize==="extra-large") {
+    cost+=4;
+  }
+  return cost;
+}
 
 //UI Logic
+
 $(document).ready(function() {
   // event.preventDefault()
   $("form#pizza-order").submit(function() {
-    $("input#name").val()=customerName
-    $("input#name").val()=customerName
-    $("input#name").val()=customerName
-    var pizza = new Pizza()
-    $("#rollResult").text("Your roll was " + rollResult);
-    $("#tempScore").text("Your current score is " + tempScore);
-    $("#currentTurn").text(players[(turnCount-1)%players.length].playerName + "'s turn");
-  })
+    var customerName = $("input#name").val();
+    debugger;
+    var size = $("input:radio[name=size]:checked").val();
+    debugger;
+    var pizza = new Pizza(customerName, "large", "toppings")
+    orderPrice=pizza.price();
+    $("#order-output").text("Your total cost comes out to " + orderPrice);
+  });
 });
