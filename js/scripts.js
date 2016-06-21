@@ -15,6 +15,9 @@ Pizza.prototype.price = function () {
   } else if (this.pizzaSize==="extra-large") {
     cost+=4;
   }
+  for(var i=0;i<this.toppings.length;i++){
+    cost+=1;
+  }
   return cost;
 }
 
@@ -25,7 +28,12 @@ $(document).ready(function() {
     event.preventDefault()
     var customerName = $("input#name").val();
     var size = $("input:radio[name=size]:checked").val();
-    var pizza = new Pizza(customerName, size, "toppings")
+    var toppings=[];
+    $("input:checkbox[name=toppings]:checked").each(function(){
+      toppings.push($(this).val())
+    });
+    console.log(toppings)
+    var pizza = new Pizza(customerName, size, toppings);
     orderPrice=pizza.price();
     $("#order-output").text("Your total cost comes out to " + orderPrice);
   });
