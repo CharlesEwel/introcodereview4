@@ -30,7 +30,7 @@ Pizza.prototype.ToppingsString = function() {
    for(i=1;i<this.toppings.length-1;i++) {
      toppingsString=toppingsString+", "+this.toppings[i];
    }
-   toppingsString=toppingsString+" and "+this.toppings[this.toppings.length-1];
+   toppingsString=toppingsString+", and " + this.toppings[this.toppings.length-1];
  }
 
  return toppingsString
@@ -50,7 +50,7 @@ $(document).ready(function() {
     var pizza = new Pizza(customerName, size, toppings);
     var orderPrice=pizza.Price();
     var toppingsString=pizza.ToppingsString();
-    console.log(toppingsString)
+    $("#order-output").show();
     $("#order-output").text("Thank you " + customerName + ", your total cost comes out to $" + orderPrice +" for a"+size+" "+toppingsString+" pizza. Our delivery will be there in 30 minutes or less.");
   });
 });
