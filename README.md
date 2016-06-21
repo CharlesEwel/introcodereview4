@@ -12,11 +12,9 @@ _This is an Epicodus student project that creates a webpage for a pizza place th
 
 Behavior  | Input Example | Output Example
 ------------- | ------------- | -------------
- User can enter inputs and receive a price based on size|Medium Pizza| Price=10$
+ User can enter inputs and receive a price based on size|Medium Pizza| Price=$10
  User can add toppings and price will increase for each topping added | Medium Sausage and Pepperoni Pizza|Price=$12
  Output reflects all inputs and is parsed in proper English|Charlie orders a medium pepperoni, canadian bacon and sausage pizza| "Hi Charlie, the cost of your medium pepperoni, canadian bacon and sausage pizza is $13"
- |  |
- |  |
 
 
 
@@ -24,6 +22,8 @@ Behavior  | Input Example | Output Example
 
 * _Clone Repository_
 * _Open index.html in web browser_
+
+Alternately, click our [gh-pages link](http://charlesewel.github.io/introcodereview4)
 
 ## Known Bugs
 
